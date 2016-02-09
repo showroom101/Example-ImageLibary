@@ -1,0 +1,36 @@
+    <div >
+        <div class="col-md-4 col-md-offset-4" style="margin-top: 100px;" >
+            <div class="ui middle aligned center aligned grid">
+              <div class="column">
+                <h1 class="ui teal image header">
+                  <img src="assets/images/logo.png" class="image">
+                  <div class="content">
+                    ITopPlus DashBoard
+                  </div>
+                </h1>
+                <form class="ui large form" id="loginform" >
+                  <div class="ui stacked segment">
+                    <div class="field">
+                      <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" name="email" placeholder="E-mail address" ng-model="$root.login.email" focus-on>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" name="password" placeholder="Password" ng-model="$root.login.password" >
+                      </div>
+                    </div>
+                    <div class="ui fluid large teal button" ng-click="loginsubmit(login)">เข้าสู่ระบบ</div>
+                  </div>
+
+                  <div class="ui error message"></div>
+                </form>
+                <div class="ui message">
+                  เกิดข้อผิดพลาด ? กรุณาติดต่อ <a href="#!/">เจ้าหน้าที่</a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>

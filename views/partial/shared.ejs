@@ -1,0 +1,96 @@
+<!doctype html>
+<html ng-app="MainApp">
+<head>
+    <meta charset="utf-8">
+    <title>My LifeStyle App</title>
+    <meta name="description" content="Our Public Project">
+    <meta name="author" content="">
+    <meta name="fragment" content="!" />
+
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="components/toastr/toastr.min.css"/>
+    <link rel="stylesheet" href="components/kendo/styles/kendo.common.min.css"/>
+    <link rel="stylesheet" href="components/kendo/styles/kendo.black.min.css"/>
+    <link rel="stylesheet" href="components/semantic-ui/dist/semantic.min.css"/>
+    <link rel="stylesheet" href="components/sweetalert/dist/sweetalert.css">
+    <link rel="stylesheet" href="components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="components/hint.css/hint.min.css">
+
+    <link rel='stylesheet' href='css/style.css' />
+
+    <script type="text/javascript" src="components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="components/kendo/js/kendo.all.min.js"></script>
+    <script type="text/javascript" src="components/kendo/js/kendo.angular.min.js"></script>
+
+    <script type="text/javascript" src="components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="components/angular-resource/angular-resource.min.js"></script>
+    <script type="text/javascript" src="components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="components/angular-cookies/angular-cookies.js"></script>
+    <script type="text/javascript" src="components/angular-strap/dist/angular-strap.min.js"></script>
+    <script type="text/javascript" src="components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+
+    <script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="components/toastr/toastr.min.js"></script>
+    <script type="text/javascript" src="components/semantic-ui/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="components/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="components/async/dist/async.min.js"></script>
+    <script type="text/javascript" src="components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="components/jszip/dist/jszip.min.js"></script>
+
+    <script>
+  $(document)
+    .ready(function() {
+        $('.ui.form').form({
+          fields: {
+            email: {
+              identifier  : 'email',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Please enter your e-mail'
+                },
+                {
+                  type   : 'email',
+                  prompt : 'Please enter a valid e-mail'
+                }
+              ]
+            },
+            password: {
+              identifier  : 'password',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Please enter your password'
+                },
+                {
+                  type   : 'length[4]',
+                  prompt : 'Your password must be at least 4 characters'
+                }
+              ]
+            }
+          }, 
+           onSuccess: function(event, fields) {
+            submitForm(fields);
+            event.preventDefault();
+          } 
+            
+        });
+        
+        function submitForm() {
+            var scope = angular.element(document.getElementById('loginform')).scope();
+            scope.loginsubmit(scope.login);
+            scope.$apply();
+       }
+    });
+  </script>
+</head>
+<body id="spinner" >
+<div class="globalCtrl"  ng-controller="globalCtrl">
+     <%- body %>
+</div>
+<script type="text/javascript" src="dist/alljavascript.js"></script>
+</body>
+</html>
